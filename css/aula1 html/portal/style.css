@@ -1,0 +1,19 @@
+
+
+
+table, th, td{
+    border: 1px solid black;                
+}
+th, td {
+    padding: 10px; /* espaço interno */
+    text-align: center; /* centralizar texto*/
+}
+    th {
+        background-color: #333;
+        color: white;
+        }
+        td {
+        background-color: #f2f2f2;
+}
+
+

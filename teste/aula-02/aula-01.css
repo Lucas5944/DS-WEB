@@ -1,0 +1,70 @@
+
+/*comentario css*/
+/*seletores css*/
+p {color: rgb(51, 0, 255);}
+
+
+h1{color:rgba(212, 255, 0, 0.815)}
+
+
+*{
+    color:whitesmoke;
+}
+
+h4{
+    color:red
+
+}
+
+
+
+/*===============seletor teg HTML=============== */
+p{color:blue}
+
+/*seletor class*/
+.paragrafo-renato{color:blueviolet}
+
+
+/*==========seletor id============== */
+#paragrafo-roberto{color:brown}
+
+
+
+h1{font-family: cursive;
+    font-size: x-large;
+    background-color: rgba(0, 0, 255, 0);
+    color(78F350);
+    width: 1000px;
+    height: 1000px;
+    padding-top: 500px;}
+
+    body {background:linear-gradient(to right,rgb(255, 170, 0),rgb(255, 213, 0),rgb(251, 193, 0),rgb(255, 0, 0),black,rgb(255, 255, 255));
+
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+    
+
+
+
+    .renato{
+
+        background:linear-gradient(to right,black,rgba(255, 0, 0, 0.689))
+    }
+     
+     
+    :link:hover {
+        outline: dotted rgb(43, 0, 255);
+      }
+
+
+     a {
+        color:blueviolet
+            
+
+     }
+
+    
+
+
+
+
+

@@ -1,0 +1,19 @@
+
+h1{
+   color: aliceblue;
+   background:rgb(0, 60, 255)
+}
+h2{
+    color: rgb(0, 60, 255);
+   
+}
+img{
+    width:700px; 
+ } 
+ img{
+    height: 400px; ;
+ }
+ img {
+    
+    border-radius: 10px; /* cantos arredondados */
+ }
