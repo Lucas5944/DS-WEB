@@ -1,0 +1,50 @@
+
+.secreto{
+    margin-top: 200000000px;
+}
+
+.L{
+    background-color: aqua;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: sticky;
+    top: 0;
+
+    
+    
+}
+.U{
+ 
+    background-color: blueviolet;
+    display:inline-block;
+    height: 50px;
+    width: 50px;
+    position: sticky;
+    top: 0;
+    
+}
+.C{
+    background-color: rgb(255, 0, 0);
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: sticky;
+    top: 0;
+}
+.A{
+    background-color: rgb(255, 0, 247);
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: sticky;
+    top: 0;
+}
+.S{
+    background-color: darkkhaki;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    position: sticky;
+    top: 0;
+}

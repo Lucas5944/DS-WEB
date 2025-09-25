@@ -1,0 +1,28 @@
+.menu{
+    position:fixed;
+    width: 10000000 px ;
+    height:70px ;
+    right: 0px;
+    left: 0px;
+
+    
+    background-color:rgb(62, 56, 56) ;
+    
+
+}
+.caixa{
+    position:relative;
+    width: 200px ;
+    height:700px ;  
+    background-color:rgb(224, 5, 5) ;
+    top:50px
+}
+.texto{
+    width: 200px ;
+    height:700px ;
+    top: 0px;
+
+
+}
+
+   
