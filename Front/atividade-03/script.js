@@ -1,176 +1,39 @@
-//---------nome----------//
+
 var contadoritem = 0
 
 function cadastro(){
 
-    //incrementando o contador
+   
 
     contadoritem ++
 
-    let novoItem = document.createElement("li");//cria o novo item
-    let novaTarefa = document.createElement("novaTarefa");
+    var novoAluno = document.createElement('li')
 
-    //adiciono texto ao meu item
-    novoItem.textContent = contadoritem + " - " + novaTarefa;
-
-    //atribuo um id 
-    novoItem.setAttribute("id", contadoritem);//
-
-    //criar um boa de remover
-   let botaoremover = document.createElement('button');
-   botaoremover.textContent = 'remover'; //
-   botaoremover.setAttribute('onclick', `removeritem(${contadoritem})`);
-
-   novoItem.appendChild (botaoremover)
-   document.getElementById('lista').appendChild(novoItem)
-
+    var novoNome = document.getElementById('nome').value;
+    var novoEmail = document.getElementById('email').value;
+    var novoRM = document.getElementById('RM').value;
+    var novoTelefone = document.getElementById('telefone').value;
+    var novoTurma = document.getElementById('turma').value;
    
-}
+  
+    //novoAluno.textContent = contadoritem + " - "  + novoNome + ' - ' + novoEmail + ' - ' + novoRM + ' - ' + novoTelefone + ' - ' + novoTurma;
 
-function removeritem(itemLista){
-    var item = document.getElementById(itemLista);
-    document.getElementById("lista").removeChild (item);
-}   
+    novoAluno.innerHTML = contadoritem + " <br> "  + novoNome + ' <br> ' + novoEmail + ' <br> ' + novoRM + ' <br> ' + novoTelefone + ' <br> ' + novoTurma;
 
-
-// -----------email-----------//
-
-
-
-var cadastroalunos = 0
-
-function cadastro(){
-
-    //incrementando o contador
-
-    cadastroalunos ++
-
-    let novoaluno = document.createElement("li");
-    let novoAL = document.createElement("novaTarefa");
+    novoAluno.setAttribute("id", contadoritem);
 
     
-    novoaluno.textContent = contadoritem + " - " + novoAL;
-
-  
-    novoaluno.setAttribute("id", ccontagemdealunos);//
-
-   
    let botaoremover = document.createElement('button');
-   botaoremover.textContent = 'remover'; //
-   botaoremover.setAttribute('onclick', `removeritem(${contagemdealunos})`);
-
-   novoItem.appendChild (botaoremover)
-   document.getElementById('lista').appendChild(novoItem)
-
-   
-}
-
-function removeritem(itemLista){
-    var item = document.getElementById(itemLista);
-    document.getElementById("lista").removeChild (item);
-}
-
-
-//-------RM-------//
-var contadoritem = 0
-
-function cadastro(){
-
-    //incrementando o contador
-
-    contadoritem ++
-
-    let novoItem = document.createElement("li");//cria o novo item
-    let novaTarefa = document.createElement("novaTarefa");
-
-    //adiciono texto ao meu item
-    novoItem.textContent = contadoritem + " - " + novaTarefa;
-
-    //atribuo um id 
-    novoItem.setAttribute("id", contadoritem);//
-
-    //criar um boa de remover
-   let botaoremover = document.createElement('button');
-   botaoremover.textContent = 'remover'; //
+   botaoremover.textContent = 'remover'; 
    botaoremover.setAttribute('onclick', `removeritem(${contadoritem})`);
 
-   novoItem.appendChild (botaoremover)
-   document.getElementById('lista').appendChild(novoItem)
+   novoAluno.appendChild (botaoremover)
+   document.getElementById('listaAlunos').appendChild(novoAluno)
 
    
 }
 
 function removeritem(itemLista){
     var item = document.getElementById(itemLista);
-    document.getElementById("lista").removeChild (item);
-}
-
-//-------telefone------//
-
-var contadoritem = 0
-
-function cadastro(){
-
-    //incrementando o contador
-
-    contadoritem ++
-
-    let novoItem = document.createElement("li");//cria o novo item
-    let novaTarefa = document.createElement("novaTarefa");
-
-    //adiciono texto ao meu item
-    novoItem.textContent = contadoritem + " - " + novaTarefa;
-
-    //atribuo um id 
-    novoItem.setAttribute("id", contadoritem);//
-
-    //criar um boa de remover
-   let botaoremover = document.createElement('button');
-   botaoremover.textContent = 'remover'; //
-   botaoremover.setAttribute('onclick', `removeritem(${contadoritem})`);
-
-   novoItem.appendChild (botaoremover)
-   document.getElementById('lista').appendChild(novoItem)
-
-   
-}
-
-function removeritem(itemLista){
-    var item = document.getElementById(itemLista);
-    document.getElementById("lista").removeChild (item);
-}
-
-//-------turma-------//
-
-var contadoritem = 0
-
-function cadastro(){
-
-    //incrementando o contador
-
-    contadoritem ++
-
-    let novoItem = document.createElement("li");//cria o novo item
-    let novaTarefa = document.createElement("novaTarefa");
-
-    //adiciono texto ao meu item
-    novoItem.textContent = contadoritem + " - " + novaTarefa;
-
-    //atribuo um id 
-    novoItem.setAttribute("id", contadoritem);//
-
-    //criar um boa de remover
-   let botaoremover = document.createElement('button');
-   botaoremover.textContent = 'remover'; //
-   botaoremover.setAttribute('onclick', `removeritem(${contadoritem})`);
-
-   novoItem.appendChild (botaoremover)
-   document.getElementById('lista').appendChild(novoItem)
-
-   
-}
-
-function removeritem(itemLista){
-    var item = document.getElementById(itemLista);
-    document.getElementById("lista").removeChild (item);
-}
+    document.getElementById("listaAlunos").removeChild (item);
+}   
