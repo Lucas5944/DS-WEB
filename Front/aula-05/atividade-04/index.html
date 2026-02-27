@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>atividade</title>
+    <title> Pac-Man</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+    <div class="painel">
+        <h1>Pontos: <span id="placar">0</span></h1>
+    </div>
 
-    <div class="area" id="area">                            
-       <div class="area2" id="area2">
-        
-       </div>
-    
-       
+    <div id="pacman"></div>
+    <div id="comida"></div>
+    <div id="fantasminha"></div>
+    <div id="fantasminha">
+  <div class="olho olho-esquerdo"></div>
+  <div class="olho olho-direito"></div>
+</div>
 
-   
+<div id="tela-morte">
+  <h1>GAME OVER</h1>
+  <button onclick="reiniciar()">REINICIAR</button>
+</div>
 
-
-    <div class="espacamento"></div>
+    <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
-
 </html>

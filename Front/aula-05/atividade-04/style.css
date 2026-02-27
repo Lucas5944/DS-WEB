@@ -1,31 +1,131 @@
 body {
-text-align: center;
-background: #fafafa;
+    background-color: #111;
+    margin: 0;
+    overflow: hidden; /* Evita que a tela role */
+    font-family: Arial, sans-serif;
+    color: white;
 }
-.area{
-margin: 0 auto;
-width: 1000px;
-height: 500px;
-border: 1px solid black;
-
-margin: 20px auto;
-padding: 10px;
-}
-
-body {
-text-align: center;
-background: #fafafa;
-}
-.area2{
-margin: 0 auto;
-width: 40px;
-height: 10px;
-border: 1px solid black;
-
-margin: 20px auto;
-padding: 10px;
+.painel {
+    text-align: center;
+    width: 100%;
+    position: absolute;
 }
 
+#pacman {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%, #ffff00, #ffcc00); /* Amarelo com profundidade */
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    
+    /* Brilho Neon Amarelo */
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
+    
+    /* Animação que faz a boca abrir e fechar sozinha */
+    animation: chomp 0.25s ease-in-out infinite alternate;
+    
+    /* Suaviza a rotação quando ele muda de direção */
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Criando o efeito de mastigar (muda o recorte da boca) */
+@keyframes chomp {
+    0% {
+        clip-path: polygon(100% 25%, 50% 50%, 100% 75%, 100% 100%, 0% 100%, 0% 0%, 100% 0%);
+    }
+    100% {
+        clip-path: polygon(100% 45%, 50% 50%, 100% 55%, 100% 100%, 0% 100%, 0% 0%, 100% 0%);
+    }
+}
+
+/* Opcional: Adicionar um olho pequeno para um visual mais moderno */
+#pacman::after {
+    content: "";
+    position: absolute;
+    background-color: #000;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 10px;
+    left: 20px;
+}
+#comida {
+    width: 20px;
+    height: 20px;
+    background-color: #ffb8ae;
+    border-radius: 50%;
+    position: absolute;
+}
+
+
+#fantasminha {
+    width: 35px; /* Aumentei um pouco para detalhes aparecerem melhor */
+    height: 40px;
+    background-color: #ff0000; /* Vermelho clássico do Blinky */
+    position: absolute;
+    
+    /* Topo arredondado e base quadrada */
+    border-radius: 50% 50% 0 0;
+    
+    /* Efeito de brilho neon */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+/* Criando os olhos do fantasma */
+#fantasminha::before {
+    content: "";
+    position: absolute;
+    background: white;
+    width: 8px;
+    height: 10px;
+    border-radius: 50%;
+    top: 10px;
+    left: 6px;
+    /* Pupila azul usando shadow para não precisar de mais uma div */
+    box-shadow: 15px 0 0 white, 2px 2px 0 blue, 17px 2px 0 blue;
+}
+
+/* Criando os pés ondulados (pixel art style) */
+#fantasminha::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    /* Gera 3 ondinhas na base */
+    background-image: 
+        radial-gradient(circle at 6px 0%, #ff0000 6px, transparent 7px),
+        radial-gradient(circle at 17.5px 0%, #ff0000 6px, transparent 7px),
+        radial-gradient(circle at 29px 0%, #ff0000 6px, transparent 7px);
+}
+
+
+#tela-morte {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: red;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 40px;
+  z-index: 999;
+}
+
+#tela-morte button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background: yellow;
+  border: none;
+  cursor: pointer;
+}
 
 
 
