@@ -1,17 +1,10 @@
-<?php
-
+<?php    
 class Veiculo {
     public $marca;
     public $modelo;
     private $velocidade;
 
-    public function __construct($marca, $modelo) {
-        $this->marca = $marca;
-        $this->modelo = $modelo;
-        $this->velocidade = 0;
-    }
-
-    
+   
     public function setVelocidade($velocidade) {
         if ($velocidade >= 0) {
             $this->velocidade = $velocidade;
@@ -23,39 +16,55 @@ class Veiculo {
         return $this->velocidade;
     }
 
-    public function exibirDados() {
-        return "Marca: {$this->marca} | Modelo: {$this->modelo} | Velocidade: {$this->velocidade} km/h";
+   
+    public function acelerar() {
     }
 }
+
 
 class Carro extends Veiculo {
 
     public function acelerar() {
-        $novaVelocidade = $this->getVelocidade() + 20;
+        $novaVelocidade = $this->getVelocidade() + 10;
         $this->setVelocidade($novaVelocidade);
-        return "Carro acelerou para " . $this->getVelocidade() . " km/h";
     }
 }
+
 
 class Moto extends Veiculo {
 
     public function acelerar() {
-        $novaVelocidade = $this->getVelocidade() + 30;
+        
+        $novaVelocidade = $this->getVelocidade() + 20;
         $this->setVelocidade($novaVelocidade);
-        return "Moto acelerou para " . $this->getVelocidade() . " km/h";
     }
 }
 
 
-$carro = new Carro("Toyota", "Corolla");
-$moto = new Moto("Honda", "CB500");
 
-echo $carro->exibirDados() . "<br>";
-echo $carro->acelerar() . "<br>";
-echo $carro->exibirDados() . "<br><br>";
+$carro = new Carro();
+$carro->marca = "BMW";
+$carro->modelo = "M3";
+$carro->setVelocidade(0);
 
-echo $moto->exibirDados() . "<br>";
-echo $moto->acelerar() . "<br>";
-echo $moto->exibirDados();
+$moto = new Moto();
+$moto->marca = "Honda";
+$moto->modelo = "CB 500";
+$moto->setVelocidade(0);
+
+
+$carro->acelerar();
+$moto->acelerar();
+
+
+echo " CARRO <br>";
+echo "Marca: " . $carro->marca . "<br>";
+echo "Modelo: " . $carro->modelo . "<br>";
+echo "Velocidade: " . $carro->getVelocidade() . " km/h<br><br>";
+
+echo " MOTO <br>";
+echo "Marca: " . $moto->marca . "<br>";
+echo "Modelo: " . $moto->modelo . "<br>";
+echo "Velocidade: " . $moto->getVelocidade() . " km/h<br>";
 
 ?>
