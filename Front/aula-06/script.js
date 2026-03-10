@@ -62,24 +62,28 @@ if(!emailRegex.test(email)){
 
 
 
-    // Validação Senha + Confirmação
-let senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+   let senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
-// (?=.*[a-z])     pelo menos uma letra minúscula
-// (?=.*[A-Z])     pelo menos uma letra maiúscula
-// (?=.*\d)       pelo menos um número
-// (?=.*[\W_])    pelo menos um caractere especial
-// .{8,}           comprimento mínimo 8
+// Capturando os elementos para facilitar o uso
+let erroSenha = document.getElementById("erro-senha");
+let erroConfirma = document.getElementById("erro-confirma-senha"); // ID sugerido
 
+// 1. Valida a força da senha
 if(!senhaRegex.test(senha)){
-    document.getElementById("erro-senha").textContent = "Senha fraca. Use maiúsculas, minúsculas, números e caracteres especiais";
-} else if(confirmaSenha !== senha){
-    document.getElementById("erro-senha").textContent = "As senhas não coincidem";
-} else {
-    document.getElementById("erro-senha").textContent = "";
-    document.getElementById("resultado").textContent += "Senha válida\n";
+    erroSenha.textContent = "Senha fraca. Use maiúsculas, minúsculas, números e caracteres especiais";
+    erroConfirma.textContent = ""; // Limpa o erro de baixo se houver
+} 
+// 2. Valida se são iguais
+else if(confirmaSenha !== senha){
+    erroSenha.textContent = ""; // Senha é forte, então limpa o erro dela
+    erroConfirma.textContent = "As senhas não coincidem";
+} 
+// 3. Tudo OK
+else {
+    erroSenha.textContent = "";
+    erroConfirma.textContent = "";
+    document.getElementById("resultado").textContent += "Senha válida e confirmada\n";
 }
-
 
 
 
@@ -92,15 +96,16 @@ if(!senhaRegex.test(senha)){
 
     
     // Validação Telefone
-let telefoneRegex = /^\([0-9]{2}\) 9?[0-9]{4}\-[0-9]{4}$/; 
+// Aceita: (11) 99999-9999, (11) 9999-9999 ou (11)99999-9999
+let telefoneRegex = /^\([0-9]{2}\)\s?9?[0-9]{4}\-[0-9]{4}$/; 
 
 if(!telefoneRegex.test(telefone)){
     document.getElementById("erro-telefone").textContent = "Telefone inválido. Use (11) 99999-9999";
 } else {
     document.getElementById("erro-telefone").textContent = "";
+    // Lembre-se: use apenas "=" se quiser mostrar só o último resultado
     document.getElementById("resultado").textContent += "Telefone válido: " + telefone + "\n";
 }
-
 
 
    // Validação CEP
@@ -109,6 +114,7 @@ let cepRegex = /^\d{5}-\d{3}$/;
 // ^         início da string
 // \d{5}     cinco dígitos
 // -         hífen
+
 // \d{3}     três dígitos
 // $         fim da string
 
@@ -124,7 +130,10 @@ if(!cepRegex.test(cep)){
 
 
 //verificaçao data 
-    let match = data.match(dataRegex);
+const dataRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
+
+let match = data.match(dataRegex);
+
 if(!match){
     document.getElementById("erro-data-nascimento").textContent = "Data inválida. Use DD/MM/AAAA";
 } else {
@@ -134,11 +143,11 @@ if(!match){
 
     let dataValida = true;
 
+    // 2. CORREÇÃO: Troquei '==' (comparação) por '=' (atribuição)
     if(mes < 1 || mes > 12) dataValida = false;
     else if(dia < 1) dataValida = false;
     else if([4,6,9,11].includes(mes) && dia > 30) dataValida = false;
     else if(mes === 2){
-        // Verifica se ano é bissexto
         let bissexto = (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0);
         if(dia > (bissexto ? 29 : 28)) dataValida = false;
     } else if(dia > 31){
